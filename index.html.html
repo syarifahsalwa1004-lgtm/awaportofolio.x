@@ -3,16 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Syarifah Salwa | Portofolio Personal</title>
-    <!-- Font Family Poppins & Quicksand -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+    <title>Portofolio - Syarifah Salwa</title>
+    
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     
+    <!-- Google Fonts (Poppins & Quicksand) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -26,8 +29,8 @@
                             softBlue: '#D4E6F1',
                             mint: '#A2E8DD',
                             pink: '#FADBD8',
-                            darkBg: '#1E293B',
-                            darkCard: '#334155',
+                            darkBg: '#0F172A',
+                            darkCard: '#1E293B',
                             textDark: '#2C3E50',
                             textLight: '#F8FAFC'
                         }
@@ -40,6 +43,7 @@
             }
         }
     </script>
+
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -65,7 +69,7 @@
         }
     </style>
 </head>
-<body class="bg-[#EAF4F4] dark:bg-pastel-darkBg text-pastel-textDark dark:text-pastel-textLight min-h-screen relative overflow-x-hidden">
+<body class="bg-slate-50 text-slate-800 dark:bg-pastel-darkBg dark:text-pastel-textLight min-h-screen">
 
     <!-- Notification Toast -->
     <div id="toast" class="fixed top-24 right-5 z-50 transform translate-x-full transition-transform duration-300 ease-in-out bg-white dark:bg-pastel-darkCard border-2 border-pastel-mint px-5 py-4 rounded-2xl shadow-xl flex items-center space-x-3">
@@ -73,13 +77,13 @@
             <i data-lucide="check-circle"></i>
         </div>
         <div>
-            <h4 class="font-bold text-sm">Pesan Terkirim!</h4>
-            <p class="text-xs text-gray-500 dark:text-gray-300">Terima kasih telah menghubungi Syarifah Salwa.</p>
+            <h4 id="toastTitle" class="font-bold text-sm">Pesan Terkirim!</h4>
+            <p id="toastMessage" class="text-xs text-gray-500 dark:text-gray-300">Terima kasih telah menghubungi Syarifah Salwa.</p>
         </div>
     </div>
 
     <!-- HEADER & NAVBAR -->
-    <header class="sticky top-0 z-40 backdrop-blur-md bg-white/70 dark:bg-pastel-darkBg/70 border-b border-gray-100 dark:border-gray-700 transition-all">
+    <header class="sticky top-0 z-40 backdrop-blur-md bg-white/80 dark:bg-pastel-darkBg/80 border-b border-gray-100 dark:border-gray-800 transition-all">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
             <!-- Brand Logo -->
             <a href="#" class="font-cute font-bold text-2xl tracking-wider flex items-center gap-2 text-teal-700 dark:text-pastel-accent">
@@ -98,7 +102,7 @@
 
             <!-- Actions (Theme Toggle & Mobile Menu) -->
             <div class="flex items-center space-x-4">
-                <button id="themeToggle" class="p-2.5 rounded-2xl bg-white dark:bg-pastel-darkCard shadow-sm border border-gray-100 dark:border-gray-700 text-gray-600 dark:text-gray-300 hover:scale-105 transition">
+                <button id="themeToggle" class="p-2.5 rounded-2xl bg-white dark:bg-pastel-darkCard shadow-sm border border-gray-100 dark:border-gray-700 text-gray-600 dark:text-gray-300 hover:scale-105 transition" title="Ganti Tema">
                     <i data-lucide="sun" class="hidden dark:block w-5 h-5"></i>
                     <i data-lucide="moon" class="block dark:hidden w-5 h-5"></i>
                 </button>
@@ -110,4 +114,562 @@
         </div>
 
         <!-- Mobile Navigation -->
-        <div id="mobileMenu" class="hidden md
+        <div id="mobileMenu" class="hidden md:hidden bg-white dark:bg-pastel-darkCard border-b border-gray-100 dark:border-gray-700 px-6 py-4 flex-col space-y-3 font-medium text-sm">
+            <a href="#home" class="mobile-link py-1 hover:text-teal-600">Home</a>
+            <a href="#about" class="mobile-link py-1 hover:text-teal-600">About</a>
+            <a href="#experience" class="mobile-link py-1 hover:text-teal-600">Experience</a>
+            <a href="#education" class="mobile-link py-1 hover:text-teal-600">Education</a>
+            <a href="#skills" class="mobile-link py-1 hover:text-teal-600">Skills</a>
+            <a href="#contact" class="mobile-link py-1 hover:text-teal-600">Contact</a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION (HERO / BERANDA) -->
+    <section id="home" class="max-w-6xl mx-auto px-6 py-16 md:py-20 flex flex-col md:flex-row items-center justify-between gap-12 relative">
+        <!-- Text Info -->
+        <div class="flex-1 space-y-6 text-center md:text-left z-10">
+            
+            <div class="inline-flex items-center gap-2 bg-white dark:bg-pastel-darkCard px-4 py-2 rounded-full border border-pastel-mint shadow-sm text-xs font-semibold text-teal-700 dark:text-pastel-accent">
+                <span id="displayBadge">🐱 Hi there, welcome to my space!</span>
+            </div>
+            
+            <h1 class="text-3xl md:text-5xl font-extrabold leading-tight tracking-tight">
+                <span id="displayGreeting">Halo, Saya</span> <br>
+                <span id="displayName" class="text-teal-600 dark:text-pastel-accent font-cute">Syarifah Salwa</span>
+            </h1>
+            
+            <p id="displaySubtitle" class="text-base md:text-lg text-gray-600 dark:text-gray-300 font-medium">
+                Information Systems Student at IT-PLN
+            </p>
+            
+            <p id="displayBio" class="text-sm md:text-base text-gray-500 dark:text-gray-400 max-w-xl leading-relaxed">
+                Mahasiswi aktif Institut Teknologi PLN, Fakultas Telematika Energi, Program Studi Sistem Informasi. Memiliki motivasi tinggi dalam bidang teknologi informasi serta bersemangat untuk terus berkembang secara akademik maupun profesional.
+            </p>
+
+            <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 pt-2">
+                <a href="#contact" class="px-6 py-3 bg-teal-600 hover:bg-teal-700 text-white font-semibold rounded-2xl shadow-md transition transform hover:-translate-y-0.5 flex items-center gap-2">
+                    <i data-lucide="mail" class="w-4 h-4"></i> Hubungi Saya
+                </a>
+                <button id="toggleEditBtn" class="px-6 py-3 bg-amber-100 hover:bg-amber-200 text-amber-900 font-semibold rounded-2xl border border-amber-200 shadow-sm transition flex items-center gap-2">
+                    <i data-lucide="edit-3" class="w-4 h-4"></i> Edit Kata Beranda
+                </button>
+            </div>
+        </div>
+
+        <!-- Polaroid Profile Picture -->
+        <div class="relative flex-1 flex justify-center items-center">
+            <div class="absolute -top-4 -left-2 md:left-10 z-20 bg-amber-100 text-amber-800 text-xs px-3 py-1.5 rounded-full font-cute font-bold shadow-sm border border-amber-200 rotate-[-12deg]">
+                ✨ IT-PLN Student
+            </div>
+            <div class="absolute -bottom-4 -right-2 md:right-10 z-20 bg-pink-100 text-pink-700 text-xs px-3 py-1.5 rounded-full font-cute font-bold shadow-sm border border-pink-200 rotate-[8deg]">
+                🐾 Soft & Chic
+            </div>
+
+            <div class="polaroid-frame bg-white dark:bg-pastel-darkCard p-4 rounded-2xl border border-gray-100 dark:border-gray-700 max-w-xs w-full scrapbook-shadow">
+                <div class="aspect-square rounded-xl overflow-hidden bg-gradient-to-br from-teal-100 to-sky-100 flex items-center justify-center relative">
+                    <img src="https://api.dicebear.com/7.x/bottts-neutral/svg?seed=Salwa&backgroundColor=d1e7dd" alt="Syarifah Salwa Avatar" class="w-full h-full object-cover">
+                </div>
+                <div class="mt-4 text-center">
+                    <p class="font-cute font-bold text-lg text-gray-700 dark:text-gray-200">Syarifah Salwa 🌸</p>
+                    <p class="text-xs text-gray-400">Sistem Informasi '25</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PANEL EDIT KATA-KATA BERANDA (Interactive Home Text Editor) -->
+    <section id="editHomePanel" class="hidden max-w-6xl mx-auto px-6 mb-12">
+        <div class="bg-amber-50 dark:bg-gray-800 border-2 border-amber-200 dark:border-amber-600/50 p-6 rounded-3xl shadow-md space-y-4">
+            <div class="flex items-center justify-between border-b border-amber-200 dark:border-gray-700 pb-3">
+                <div class="flex items-center gap-2 text-amber-800 dark:text-amber-300 font-bold">
+                    <i data-lucide="sliders" class="w-5 h-5"></i>
+                    <h3>Edit Kata-Kata Beranda (Home Text Editor)</h3>
+                </div>
+                <button id="closeEditBtn" class="text-gray-400 hover:text-gray-600 dark:hover:text-white">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <label class="block text-xs font-bold mb-1 text-gray-700 dark:text-gray-300">Badge Atas</label>
+                    <input type="text" id="inputBadge" class="w-full px-3 py-2 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-sm focus:outline-none">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold mb-1 text-gray-700 dark:text-gray-300">Sapaan (Greeting)</label>
+                    <input type="text" id="inputGreeting" class="w-full px-3 py-2 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-sm focus:outline-none">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold mb-1 text-gray-700 dark:text-gray-300">Nama Utama</label>
+                    <input type="text" id="inputName" class="w-full px-3 py-2 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-sm focus:outline-none">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold mb-1 text-gray-700 dark:text-gray-300">Sub-judul / Subtitle</label>
+                    <input type="text" id="inputSubtitle" class="w-full px-3 py-2 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-sm focus:outline-none">
+                </div>
+
+                <div class="md:col-span-2">
+                    <label class="block text-xs font-bold mb-1 text-gray-700 dark:text-gray-300">Deskripsi Singkat / Bio</label>
+                    <textarea id="inputBio" rows="3" class="w-full px-3 py-2 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-sm focus:outline-none"></textarea>
+                </div>
+            </div>
+
+            <div class="flex items-center justify-end gap-3 pt-2">
+                <button id="resetTextBtn" class="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 text-xs font-semibold rounded-xl hover:bg-gray-300 transition">
+                    Reset Teks
+                </button>
+                <button id="saveTextBtn" class="px-5 py-2 bg-teal-600 text-white text-xs font-bold rounded-xl hover:bg-teal-700 shadow transition flex items-center gap-1">
+                    <i data-lucide="check" class="w-4 h-4"></i> Simpan Perubahan
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- TENTANG SAYA (About Section) -->
+    <section id="about" class="max-w-6xl mx-auto px-6 py-16">
+        <div class="bg-white dark:bg-pastel-darkCard rounded-3xl p-8 md:p-12 border border-gray-100 dark:border-gray-700 scrapbook-shadow">
+            <div class="flex flex-col md:flex-row gap-8 items-start">
+                <div class="flex-1 space-y-4">
+                    <div class="flex items-center gap-2 text-teal-600 dark:text-pastel-accent font-cute font-bold text-xl">
+                        <i data-lucide="user" class="w-6 h-6"></i>
+                        <h2>Tentang Saya</h2>
+                    </div>
+                    <h3 class="text-2xl font-bold">Inovatif, Terorganisir & Berorientasi Solusi</h3>
+                    <p class="text-gray-600 dark:text-gray-300 text-sm md:text-base leading-relaxed">
+                        Sebagai mahasiswi Sistem Informasi di Institut Teknologi PLN, saya fokus mempelajari perancangan sistem, analisis data, serta manajemen organisasi. Berbekal pengalaman kepemimpinan dan pengelolaan keuangan sejak masa sekolah hingga perguruan tinggi, saya terbiasa bekerja dengan ketelitian tinggi, dedikasi, serta keterampilan komunikasi interaktif.
+                    </p>
+                </div>
+
+                <!-- Cards Badge Grid -->
+                <div class="flex-1 w-full grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="p-5 bg-teal-50 dark:bg-gray-800/50 rounded-2xl border border-teal-100 dark:border-gray-700 space-y-1">
+                        <i data-lucide="graduation-cap" class="text-teal-600 dark:text-pastel-accent w-6 h-6 mb-2"></i>
+                        <h4 class="font-bold text-sm">Sistem Informasi</h4>
+                        <p class="text-xs text-gray-500 dark:text-gray-400">Institut Teknologi PLN</p>
+                    </div>
+
+                    <div class="p-5 bg-sky-50 dark:bg-gray-800/50 rounded-2xl border border-sky-100 dark:border-gray-700 space-y-1">
+                        <i data-lucide="users" class="text-sky-600 dark:text-sky-300 w-6 h-6 mb-2"></i>
+                        <h4 class="font-bold text-sm">Kepemimpinan</h4>
+                        <p class="text-xs text-gray-500 dark:text-gray-400">Organisasi & Komunitas</p>
+                    </div>
+
+                    <div class="p-5 bg-pink-50 dark:bg-gray-800/50 rounded-2xl border border-pink-100 dark:border-gray-700 space-y-1">
+                        <i data-lucide="calculator" class="text-pink-600 dark:text-pink-300 w-6 h-6 mb-2"></i>
+                        <h4 class="font-bold text-sm">Manajemen Keuangan</h4>
+                        <p class="text-xs text-gray-500 dark:text-gray-400">Anggaran & Administrasi</p>
+                    </div>
+
+                    <div class="p-5 bg-amber-50 dark:bg-gray-800/50 rounded-2xl border border-amber-100 dark:border-gray-700 space-y-1">
+                        <i data-lucide="sparkles" class="text-amber-600 dark:text-amber-300 w-6 h-6 mb-2"></i>
+                        <h4 class="font-bold text-sm">Proaktif</h4>
+                        <p class="text-xs text-gray-500 dark:text-gray-400">Siap Berkembang</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PENGALAMAN (Experience Section) -->
+    <section id="experience" class="max-w-6xl mx-auto px-6 py-16">
+        <div class="text-center space-y-2 mb-12">
+            <span class="font-cute text-teal-600 dark:text-pastel-accent font-bold text-lg">🐾 Perjalanan Organisasi & Kerja</span>
+            <h2 class="text-3xl font-extrabold">Pengalaman Pengabdian</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Card 1 -->
+            <div class="bg-white dark:bg-pastel-darkCard rounded-3xl p-6 border border-gray-100 dark:border-gray-700 scrapbook-shadow hover:-translate-y-1 transition duration-300 flex flex-col justify-between">
+                <div class="space-y-4">
+                    <div class="flex justify-between items-start">
+                        <span class="sticker-badge bg-emerald-100 text-emerald-800 text-xs px-3 py-1 rounded-full font-bold">2020</span>
+                        <div class="p-2 bg-emerald-50 dark:bg-gray-700 rounded-xl text-emerald-600 dark:text-emerald-300">
+                            <i data-lucide="wallet" class="w-5 h-5"></i>
+                        </div>
+                    </div>
+                    <h3 class="font-bold text-lg">Bendahara Kepanitiaan</h3>
+                    <p class="text-xs text-gray-500 dark:text-gray-400">Kepanitiaan Acara Perpisahan</p>
+                    <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                        Dipilih untuk bertanggung jawab sebagai bendahara dalam kepanitiaan acara perpisahan. Bertugas mengelola keuangan kegiatan secara transparan dan akurat sebagai pengalaman nyata dalam manajemen keuangan organisasi.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-white dark:bg-pastel-darkCard rounded-3xl p-6 border border-gray-100 dark:border-gray-700 scrapbook-shadow hover:-translate-y-1 transition duration-300 flex flex-col justify-between">
+                <div class="space-y-4">
+                    <div class="flex justify-between items-start">
+                        <span class="sticker-badge bg-sky-100 text-sky-800 text-xs px-3 py-1 rounded-full font-bold">2024</span>
+                        <div class="p-2 bg-sky-50 dark:bg-gray-700 rounded-xl text-sky-600 dark:text-sky-300">
+                            <i data-lucide="award" class="w-5 h-5"></i>
+                        </div>
+                    </div>
+                    <h3 class="font-bold text-lg">Wakil Ketua Organisasi</h3>
+                    <p class="text-xs text-gray-500 dark:text-gray-400">MAS Ulumul Quran</p>
+                    <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                        Dipercaya sebagai Wakil Ketua Organisasi semasa menempuh pendidikan MA. Peran ini memberikan pengalaman berharga dalam kepemimpinan, koordinasi antar anggota, dan pengelolaan kegiatan secara efektif.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-white dark:bg-pastel-darkCard rounded-3xl p-6 border border-gray-100 dark:border-gray-700 scrapbook-shadow hover:-translate-y-1 transition duration-300 flex flex-col justify-between">
+                <div class="space-y-4">
+                    <div class="flex justify-between items-start">
+                        <span class="sticker-badge bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full font-bold">2025</span>
+                        <div class="p-2 bg-purple-50 dark:bg-gray-700 rounded-xl text-purple-600 dark:text-purple-300">
+                            <i data-lucide="book-open" class="w-5 h-5"></i>
+                        </div>
+                    </div>
+                    <h3 class="font-bold text-lg">Pengajar / Tenaga Pendidik</h3>
+                    <p class="text-xs text-gray-500 dark:text-gray-400">Komunitas Keagamaan</p>
+                    <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                        Dipercaya sebagai tenaga pengajar dalam komunitas keagamaan di lingkungan sekitar. Kegiatan ini mengasah kemampuan dalam berkomunikasi, kepercayaan diri, dan rasa tanggung jawab terhadap sekitar.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RIWAYAT PENDIDIKAN (Education Section) -->
+    <section id="education" class="max-w-4xl mx-auto px-6 py-16">
+        <div class="text-center space-y-2 mb-12">
+            <span class="font-cute text-teal-600 dark:text-pastel-accent font-bold text-lg">📚 Jejak Akademik</span>
+            <h2 class="text-3xl font-extrabold">Riwayat Pendidikan</h2>
+        </div>
+
+        <div class="relative border-l-2 border-pastel-accent dark:border-gray-700 ml-4 md:ml-32 space-y-8">
+            <!-- Timeline Item 1 -->
+            <div class="relative pl-8">
+                <div class="absolute -left-[9px] top-1.5 bg-teal-500 w-4 h-4 rounded-full border-4 border-white dark:border-pastel-darkBg"></div>
+                <div class="bg-white dark:bg-pastel-darkCard p-6 rounded-2xl border border-gray-100 dark:border-gray-700 shadow-sm">
+                    <span class="text-xs font-bold text-teal-600 dark:text-pastel-accent bg-teal-50 dark:bg-gray-800 px-3 py-1 rounded-full">2025 - Sekarang</span>
+                    <h3 class="text-lg font-bold mt-2">Institut Teknologi PLN</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">S1 Sistem Informasi — Fakultas Telematika Energi</p>
+                </div>
+            </div>
+
+            <!-- Timeline Item 2 -->
+            <div class="relative pl-8">
+                <div class="absolute -left-[9px] top-1.5 bg-sky-400 w-4 h-4 rounded-full border-4 border-white dark:border-pastel-darkBg"></div>
+                <div class="bg-white dark:bg-pastel-darkCard p-6 rounded-2xl border border-gray-100 dark:border-gray-700 shadow-sm">
+                    <span class="text-xs font-bold text-sky-600 dark:text-sky-300 bg-sky-50 dark:bg-gray-800 px-3 py-1 rounded-full">2022 - 2025</span>
+                    <h3 class="text-lg font-bold mt-2">MAS Ulumul Quran Pagar Air</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">Banda Aceh</p>
+                </div>
+            </div>
+
+            <!-- Timeline Item 3 -->
+            <div class="relative pl-8">
+                <div class="absolute -left-[9px] top-1.5 bg-pink-400 w-4 h-4 rounded-full border-4 border-white dark:border-pastel-darkBg"></div>
+                <div class="bg-white dark:bg-pastel-darkCard p-6 rounded-2xl border border-gray-100 dark:border-gray-700 shadow-sm">
+                    <span class="text-xs font-bold text-pink-600 dark:text-pink-300 bg-pink-50 dark:bg-gray-800 px-3 py-1 rounded-full">2020 - 2022</span>
+                    <h3 class="text-lg font-bold mt-2">MTsN MUQ Pagar Air</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">Banda Aceh</p>
+                </div>
+            </div>
+
+            <!-- Timeline Item 4 -->
+            <div class="relative pl-8">
+                <div class="absolute -left-[9px] top-1.5 bg-amber-400 w-4 h-4 rounded-full border-4 border-white dark:border-pastel-darkBg"></div>
+                <div class="bg-white dark:bg-pastel-darkCard p-6 rounded-2xl border border-gray-100 dark:border-gray-700 shadow-sm">
+                    <span class="text-xs font-bold text-amber-600 dark:text-amber-300 bg-amber-50 dark:bg-gray-800 px-3 py-1 rounded-full">2016 - 2020</span>
+                    <h3 class="text-lg font-bold mt-2">MIN 4 Kota Banda Aceh</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">Banda Aceh</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KEAHLIAN & BAHASA (Skills & Languages Section) -->
+    <section id="skills" class="max-w-6xl mx-auto px-6 py-16">
+        <div class="text-center space-y-2 mb-12">
+            <span class="font-cute text-teal-600 dark:text-pastel-accent font-bold text-lg">💡 Kemampuan & Bahasa</span>
+            <h2 class="text-3xl font-extrabold">Keahlian Utama</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Skill 1 -->
+            <div class="bg-white dark:bg-pastel-darkCard p-6 rounded-3xl border border-gray-100 dark:border-gray-700 scrapbook-shadow flex items-start space-x-4">
+                <div class="p-3 bg-teal-100 dark:bg-teal-900/50 rounded-2xl text-teal-700 dark:text-teal-300">
+                    <i data-lucide="file-spreadsheet" class="w-6 h-6"></i>
+                </div>
+                <div class="space-y-1">
+                    <h3 class="font-bold text-base">Administrasi & Software</h3>
+                    <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+                        Mahir mengoperasikan Excel, Word, dan PowerPoint untuk administrasi dan pelaporan.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Skill 2 -->
+            <div class="bg-white dark:bg-pastel-darkCard p-6 rounded-3xl border border-gray-100 dark:border-gray-700 scrapbook-shadow flex items-start space-x-4">
+                <div class="p-3 bg-sky-100 dark:bg-sky-900/50 rounded-2xl text-sky-700 dark:text-sky-300">
+                    <i data-lucide="pie-chart" class="w-6 h-6"></i>
+                </div>
+                <div class="space-y-1">
+                    <h3 class="font-bold text-base">Pengelolaan Anggaran</h3>
+                    <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+                        Terampil menyusun dan mengelola anggaran secara akurat dan efisien.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Skill 3 -->
+            <div class="bg-white dark:bg-pastel-darkCard p-6 rounded-3xl border border-gray-100 dark:border-gray-700 scrapbook-shadow flex items-start space-x-4">
+                <div class="p-3 bg-pink-100 dark:bg-pink-900/50 rounded-2xl text-pink-700 dark:text-pink-300">
+                    <i data-lucide="clock" class="w-6 h-6"></i>
+                </div>
+                <div class="space-y-1">
+                    <h3 class="font-bold text-base">Manajemen Tugas</h3>
+                    <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+                        Mampu mengelola tugas dengan baik dan memenuhi tenggat waktu secara konsisten.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Skill 4 -->
+            <div class="bg-white dark:bg-pastel-darkCard p-6 rounded-3xl border border-gray-100 dark:border-gray-700 scrapbook-shadow flex items-start space-x-4">
+                <div class="p-3 bg-purple-100 dark:bg-purple-900/50 rounded-2xl text-purple-700 dark:text-purple-300">
+                    <i data-lucide="heart-handshake" class="w-6 h-6"></i>
+                </div>
+                <div class="space-y-1">
+                    <h3 class="font-bold text-base">Interpersonal & Tim</h3>
+                    <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+                        Memahami kebutuhan rekan kerja dan memberikan dukungan yang tepat sasaran.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Skill 5 (Languages) -->
+            <div class="bg-white dark:bg-pastel-darkCard p-6 rounded-3xl border border-gray-100 dark:border-gray-700 scrapbook-shadow flex items-start space-x-4 md:col-span-2 lg:col-span-2">
+                <div class="p-3 bg-amber-100 dark:bg-amber-900/50 rounded-2xl text-amber-700 dark:text-amber-300">
+                    <i data-lucide="languages" class="w-6 h-6"></i>
+                </div>
+                <div class="space-y-2 w-full">
+                    <h3 class="font-bold text-base">Penguasaan Bahasa</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-3 py-1 bg-amber-50 dark:bg-gray-800 rounded-xl text-xs font-semibold text-amber-800 dark:text-amber-200 border border-amber-200 dark:border-gray-700">
+                            Bahasa Indonesia (Native)
+                        </span>
+                        <span class="px-3 py-1 bg-amber-50 dark:bg-gray-800 rounded-xl text-xs font-semibold text-amber-800 dark:text-amber-200 border border-amber-200 dark:border-gray-700">
+                            English (Conversational / Professional)
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KONTAK & FOOTER -->
+    <section id="contact" class="max-w-6xl mx-auto px-6 py-16">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Direct Contact Info -->
+            <div class="space-y-6">
+                <div class="space-y-2">
+                    <span class="font-cute text-teal-600 dark:text-pastel-accent font-bold text-lg">💌 Let's Connect</span>
+                    <h2 class="text-3xl font-extrabold">Hubungi Saya</h2>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">Terbuka untuk diskusi, kolaborasi, maupun peluang profesional.</p>
+                </div>
+
+                <div class="space-y-4">
+                    <a href="https://wa.me/6285938439073" target="_blank" class="p-5 bg-white dark:bg-pastel-darkCard rounded-2xl border border-gray-100 dark:border-gray-700 shadow-sm flex items-center space-x-4 hover:border-emerald-300 transition">
+                        <div class="p-3 bg-emerald-100 dark:bg-emerald-900/50 text-emerald-600 rounded-xl">
+                            <i data-lucide="phone" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-400">WhatsApp / Telepon</p>
+                            <p class="font-bold text-sm">+62 859-3843-9073</p>
+                        </div>
+                    </a>
+
+                    <a href="mailto:syariifahsalwaa@gmail.com" class="p-5 bg-white dark:bg-pastel-darkCard rounded-2xl border border-gray-100 dark:border-gray-700 shadow-sm flex items-center space-x-4 hover:border-sky-300 transition">
+                        <div class="p-3 bg-sky-100 dark:bg-sky-900/50 text-sky-600 rounded-xl">
+                            <i data-lucide="mail" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-400">Email Utama</p>
+                            <p class="font-bold text-sm">syariifahsalwaa@gmail.com</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="bg-white dark:bg-pastel-darkCard p-8 rounded-3xl border border-gray-100 dark:border-gray-700 scrapbook-shadow">
+                <form id="contactForm" class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-bold mb-1">Nama Lengkap</label>
+                        <input type="text" required placeholder="Masukkan nama Anda" class="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 text-sm focus:outline-none focus:border-teal-500">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold mb-1">Email</label>
+                        <input type="email" required placeholder="nama@email.com" class="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 text-sm focus:outline-none focus:border-teal-500">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold mb-1">Pesan</label>
+                        <textarea rows="4" required placeholder="Tuliskan pesan Anda di sini..." class="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 text-sm focus:outline-none focus:border-teal-500"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full py-3 bg-teal-600 hover:bg-teal-700 text-white font-semibold rounded-xl shadow-md transition">
+                        Kirim Pesan 🚀
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-gray-200 dark:border-gray-800 py-8 text-center text-xs text-gray-500 dark:text-gray-400">
+        <p>© 2026 Syarifah Salwa. All rights reserved.</p>
+    </footer>
+
+    <!-- Vanilla JS Logic -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Theme Toggle Logic
+        const themeToggleBtn = document.getElementById('themeToggle');
+        themeToggleBtn.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+        });
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('flex');
+            });
+        });
+
+        // Toast Notification Helper Function
+        function showToast(title, message) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastTitle').textContent = title;
+            document.getElementById('toastMessage').textContent = message;
+            
+            toast.classList.remove('translate-x-full');
+            setTimeout(() => {
+                toast.classList.add('translate-x-full');
+            }, 3000);
+        }
+
+        // Contact Form Submit Simulation
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            showToast('Pesan Terkirim!', 'Terima kasih telah menghubungi Syarifah Salwa.');
+            contactForm.reset();
+        });
+
+        // --- HOME TEXT EDITOR FEATURE ---
+        const defaultHomeText = {
+            badge: "🐱 Hi there, welcome to my space!",
+            greeting: "Halo, Saya",
+            name: "Syarifah Salwa",
+            subtitle: "Information Systems Student at IT-PLN",
+            bio: "Mahasiswi aktif Institut Teknologi PLN, Fakultas Telematika Energi, Program Studi Sistem Informasi. Memiliki motivasi tinggi dalam bidang teknologi informasi serta bersemangat untuk terus berkembang secara akademik maupun profesional."
+        };
+
+        // DOM elements for Home Display
+        const displayBadge = document.getElementById('displayBadge');
+        const displayGreeting = document.getElementById('displayGreeting');
+        const displayName = document.getElementById('displayName');
+        const displaySubtitle = document.getElementById('displaySubtitle');
+        const displayBio = document.getElementById('displayBio');
+
+        // DOM elements for Home Inputs
+        const inputBadge = document.getElementById('inputBadge');
+        const inputGreeting = document.getElementById('inputGreeting');
+        const inputName = document.getElementById('inputName');
+        const inputSubtitle = document.getElementById('inputSubtitle');
+        const inputBio = document.getElementById('inputBio');
+
+        // Toggle Panel Edit
+        const toggleEditBtn = document.getElementById('toggleEditBtn');
+        const editHomePanel = document.getElementById('editHomePanel');
+        const closeEditBtn = document.getElementById('closeEditBtn');
+
+        toggleEditBtn.addEventListener('click', () => {
+            editHomePanel.classList.toggle('hidden');
+            if(!editHomePanel.classList.contains('hidden')) {
+                // Fill inputs with current displayed values
+                inputBadge.value = displayBadge.textContent;
+                inputGreeting.value = displayGreeting.textContent;
+                inputName.value = displayName.textContent;
+                inputSubtitle.value = displaySubtitle.textContent;
+                inputBio.value = displayBio.textContent;
+            }
+        });
+
+        closeEditBtn.addEventListener('click', () => {
+            editHomePanel.classList.add('hidden');
+        });
+
+        // Save Custom Text
+        const saveTextBtn = document.getElementById('saveTextBtn');
+        saveTextBtn.addEventListener('click', () => {
+            displayBadge.textContent = inputBadge.value || defaultHomeText.badge;
+            displayGreeting.textContent = inputGreeting.value || defaultHomeText.greeting;
+            displayName.textContent = inputName.value || defaultHomeText.name;
+            displaySubtitle.textContent = inputSubtitle.value || defaultHomeText.subtitle;
+            displayBio.textContent = inputBio.value || defaultHomeText.bio;
+
+            // Save to localStorage
+            const updatedText = {
+                badge: inputBadge.value,
+                greeting: inputGreeting.value,
+                name: inputName.value,
+                subtitle: inputSubtitle.value,
+                bio: inputBio.value
+            };
+            localStorage.setItem('salwa_portfolio_home_text', JSON.stringify(updatedText));
+
+            showToast('Teks Beranda Diperbarui!', 'Perubahan kata-kata beranda berhasil disimpan.');
+            editHomePanel.classList.add('hidden');
+        });
+
+        // Reset Text to Default
+        const resetTextBtn = document.getElementById('resetTextBtn');
+        resetTextBtn.addEventListener('click', () => {
+            displayBadge.textContent = defaultHomeText.badge;
+            displayGreeting.textContent = defaultHomeText.greeting;
+            displayName.textContent = defaultHomeText.name;
+            displaySubtitle.textContent = defaultHomeText.subtitle;
+            displayBio.textContent = defaultHomeText.bio;
+
+            localStorage.removeItem('salwa_portfolio_home_text');
+            showToast('Teks Direset', 'Kata-kata beranda dikembalikan ke semula.');
+            editHomePanel.classList.add('hidden');
+        });
+
+        // Load saved text from localStorage on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedText = localStorage.getItem('salwa_portfolio_home_text');
+            if (savedText) {
+                const parsed = JSON.parse(savedText);
+                if (parsed.badge) displayBadge.textContent = parsed.badge;
+                if (parsed.greeting) displayGreeting.textContent = parsed.greeting;
+                if (parsed.name) displayName.textContent = parsed.name;
+                if (parsed.subtitle) displaySubtitle.textContent = parsed.subtitle;
+                if (parsed.bio) displayBio.textContent = parsed.bio;
+            }
+        });
+    </script>
+</body>
+</html>
